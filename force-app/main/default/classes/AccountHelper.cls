@@ -7,4 +7,11 @@ public class AccountHelper {
         }
         return accountName.length() >= 3;
     }
+    public static void validateAccounts(List<Account> accounts) {
+        for(Account acc : accounts) {
+            if(!isValidAccountName(acc.Name)) {
+                acc.addError('Account name must be at least 3 characters');
+            }
+        }
+    }
 }
